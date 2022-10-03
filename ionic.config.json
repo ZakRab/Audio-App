@@ -1,0 +1,7 @@
+{
+  "name": "Islamible",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

@@ -1,25 +1,25 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import './Library.css';
+import './Signin.css';
 
-const Library: React.FC = () => {
+const Signin: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Library</IonTitle>
+          <IonTitle>Signin</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Library</IonTitle>
+            <IonTitle size="large">signin</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Library page" />
+        <ExploreContainer name="Signin" />
       </IonContent>
     </IonPage>
   );
 };
 
-export default Library;
+export default Signin;

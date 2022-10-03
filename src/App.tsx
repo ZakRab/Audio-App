@@ -10,10 +10,11 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
+import { searchOutline, libraryOutline, bookmarkOutline } from 'ionicons/icons';
 import Library from './pages/Library';
 import MyBooks from './pages/MyBooks';
 import Search from './pages/Search';
+import Signin from './pages/Signin'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -41,30 +42,33 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
+          <Route exact path="/signin">
+            <Signin />
+          </Route>
+          <Route exact path="/library">
             <Library />
           </Route>
-          <Route exact path="/tab2">
+          <Route exact path="/mybooks">
             <MyBooks />
           </Route>
-          <Route path="/tab3">
+          <Route exact path="/search">
             <Search />
           </Route>
           <Route exact path="/">
-            <Redirect to="/tab1" />
+            <Redirect to="/signin" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={triangle} />
+          <IonTabButton tab="library" href="/library">
+            <IonIcon icon={libraryOutline} />
             <IonLabel>Library</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>MyBooks</IonLabel>
+          <IonTabButton tab="mybooks" href="/mybooks">
+            <IonIcon icon={bookmarkOutline} />
+            <IonLabel>My Books</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
+          <IonTabButton tab="search" href="/search">
+            <IonIcon icon={searchOutline} />
             <IonLabel>Search</IonLabel>
           </IonTabButton>
         </IonTabBar>

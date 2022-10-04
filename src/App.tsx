@@ -1,4 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
+import { useContext } from 'react';
 import {
   IonApp,
   IonIcon,
@@ -15,7 +16,7 @@ import Library from './pages/Library';
 import MyBooks from './pages/MyBooks';
 import Search from './pages/Search';
 import Signin from './pages/Signin'
-
+import {UserContext} from './context/UserContext'
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -34,15 +35,15 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-
 setupIonicReact();
+
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/signin">
+         <Route exact path="/signin">
             <Signin />
           </Route>
           <Route exact path="/library">

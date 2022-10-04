@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import './MyBooks.css';
+import './css/MyBooks.css';
 
 const MyBooks: React.FC = () => {
   return (

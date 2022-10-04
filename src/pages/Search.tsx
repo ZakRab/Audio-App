@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import './Search.css';
+import './css/Search.css';
 
 const Search: React.FC = () => {
   return (

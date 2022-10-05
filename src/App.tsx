@@ -59,7 +59,7 @@ const App: React.FC = () => (
             <Redirect to="/signin" />
           </Route>
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
+        <IonTabBar slot="top">
           <IonTabButton tab="library" href="/library">
             <IonIcon icon={libraryOutline} />
             <IonLabel>Library</IonLabel>

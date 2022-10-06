@@ -17,7 +17,7 @@ import {
   IonButton,
 } from "@ionic/react";
 import "./css/AudioCard.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import React from "react";
 
 const AudioCard: React.FC = () => {
@@ -26,18 +26,8 @@ const AudioCard: React.FC = () => {
     src: [require("../audio/Test_Opener.mp3")],
     html5: true,
   });
-  function playSound() {
-    Howler.volume(1);
-     sound.play();
-    setIsPlaying(true);
-  }
 
-  function pauseSound() {
-    sound.pause();
-    setIsPlaying(false);
-  }
   return (
-
     <>
       <IonCard>
         <IonItem>
@@ -56,7 +46,7 @@ const AudioCard: React.FC = () => {
             <IonIcon
               icon={play}
               onClick={() => {
-                playSound()
+                setIsPlaying(true);
               }}
             />
           )}
@@ -64,10 +54,9 @@ const AudioCard: React.FC = () => {
             <IonIcon
               icon={pause}
               onClick={() => {
-                pauseSound()
+                setIsPlaying(false);
               }}
             />
-            
           )}
         </IonItem>
       </IonCard>

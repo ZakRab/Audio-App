@@ -16,7 +16,6 @@ import {
   IonLabel,
   IonButton,
 } from "@ionic/react";
-import ReactHowler from 'react-howler'
 import "./css/AudioCard.css";
 import { useState } from "react";
 import React from "react";

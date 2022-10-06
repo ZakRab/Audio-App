@@ -9,9 +9,9 @@ const Search: React.FC = () => {
         <IonToolbar>
           <IonTitle>Search</IonTitle>
         </IonToolbar>
+        <IonSearchbar></IonSearchbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonSearchbar></IonSearchbar>
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">Search</IonTitle>

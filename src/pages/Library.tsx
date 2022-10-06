@@ -1,7 +1,6 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import './css/Library.css';
-
+import BookCard from '../components/BookCard'
 const Library: React.FC = () => {
   return (
     <IonPage>
@@ -16,7 +15,15 @@ const Library: React.FC = () => {
             <IonTitle size="large">Library</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Library page" />
+        <IonGrid>
+          <IonRow>
+          <IonCol>
+      <BookCard/>
+          </IonCol>
+          <IonCol>
+      <BookCard/>
+          </IonCol></IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );

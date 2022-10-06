@@ -12,6 +12,7 @@ import "./css/AudioCard.css";
 import { useState } from "react";
 import React from "react";
 
+
 const AudioCard: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const sound = new Howl({
@@ -19,8 +20,9 @@ const AudioCard: React.FC = () => {
     html5: true,
     volume: 1,
   });
+  
   const [soundId, setSoundId] = useState(sound.play()) // sound.play returns an id and begins to play the sound
-    sound.pause() // immediately pauses the sound 
+    sound.pause() 
 
     // listeners for testing
   sound.on("play", ()=>{
@@ -62,7 +64,7 @@ const AudioCard: React.FC = () => {
             <IonIcon
               icon={pause}
               onClick={() => {
-                sound.pause(soundId)
+                sound.pause()
                 setIsPlaying(false);
               }}
             />

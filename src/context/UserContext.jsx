@@ -70,14 +70,16 @@ export default function UserProvider(props) {
 
   return (
     <UserContext.Provider
-    //       value={{
-    //         // verify,
-    //         loggedInUser,
-    //         setLoggedInUser,
-    //         logIn,
-    //         logOut,
-    //         register,
-    //       }}
+      value={
+        {
+          //         // verify,
+          //         loggedInUser,
+          //         setLoggedInUser,
+          //         logIn,
+          //         logOut,
+          //         register,
+        }
+      }
     >
       // {props.children}
     </UserContext.Provider>

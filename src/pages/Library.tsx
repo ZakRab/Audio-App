@@ -1,6 +1,15 @@
-import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import './css/Library.css';
-import BookCard from '../components/BookCard'
+import {
+  IonCol,
+  IonContent,
+  IonGrid,
+  IonHeader,
+  IonPage,
+  IonRow,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/react";
+import "./css/Library.css";
+import BookCard from "../components/BookCard";
 const Library: React.FC = () => {
   return (
     <IonPage>
@@ -17,12 +26,13 @@ const Library: React.FC = () => {
         </IonHeader>
         <IonGrid>
           <IonRow>
-          <IonCol>
-      <BookCard/>
-          </IonCol>
-          <IonCol>
-      <BookCard/>
-          </IonCol></IonRow>
+            <IonCol>
+              <BookCard />
+            </IonCol>
+            <IonCol>
+              <BookCard />
+            </IonCol>
+          </IonRow>
         </IonGrid>
       </IonContent>
     </IonPage>

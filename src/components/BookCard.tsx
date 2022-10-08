@@ -7,8 +7,8 @@ import {
   IonItem,
   IonIcon,
   IonCardContent,
+  IonButton,
 } from "@ionic/react";
-import { useState } from "react";
 import React from "react";
 import '../index.css';
 
@@ -16,9 +16,10 @@ const BookCard: React.FC = () => {
   return (
     <>
       <IonCard>
-        <IonItem>
+        <IonCardHeader>
+        
         <img src={require("../images/this-is-islam.jpg")} alt="this is islam" />
-        </IonItem>
+        </IonCardHeader>
         <IonCardHeader>
           <IonCardSubtitle>Abu Iyaad Amjad bin Muhammad Rafiq</IonCardSubtitle>
           <IonCardTitle>This Is Islam</IonCardTitle>
@@ -27,6 +28,9 @@ const BookCard: React.FC = () => {
           A brief guide to Islam's foundations pillars and obligations, it
           morals and ethics, its position towards extremism and terrorism, and
           the status of women in Islam.
+        </IonCardContent>
+        <IonCardContent>
+          <IonButton shape="round" fill="outline">  <IonIcon slot="end" icon={bookmarkOutline}></IonIcon>Borrow Book</IonButton>
         </IonCardContent>
       </IonCard>
     </>

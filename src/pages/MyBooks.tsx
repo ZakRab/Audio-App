@@ -1,11 +1,19 @@
-import { IonContent, IonHeader, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import AudioCard from '../components/AudioCard';
+import {
+  IonCol,
+  IonContent,
+  IonGrid,
+  IonHeader,
+  IonList,
+  IonPage,
+  IonRow,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/react";
+import AudioCard from "../components/AudioCard";
 
-import './css/MyBooks.css';
-
+import "./css/MyBooks.css";
 
 const MyBooks: React.FC = () => {
-  const audiobook = {title:"this is islam", src:"../images/this-is-islam", audio:"../audio/Test_Opener.mp3", narrator:"Mahmoud Othman", Author: "Abu Iyaad Amjad bin Muhammad Rafiq" }
   return (
     <IonPage>
       <IonHeader>
@@ -18,21 +26,17 @@ const MyBooks: React.FC = () => {
           <IonToolbar>
             <IonTitle size="large">My Audio Books</IonTitle>
           </IonToolbar>
-        </IonHeader> 
-        {/* <IonList> */}
-        <AudioCard></AudioCard>
-        <AudioCard></AudioCard>
-        <AudioCard></AudioCard>
-        <AudioCard></AudioCard>
-        <AudioCard></AudioCard>
-        <AudioCard></AudioCard>
-        <AudioCard></AudioCard>
-        <AudioCard></AudioCard>
-        <AudioCard></AudioCard>
-        <AudioCard></AudioCard>
-        <AudioCard></AudioCard>
-        <AudioCard></AudioCard>
-        {/* </IonList> */}
+        </IonHeader>
+        <IonGrid>
+          <IonRow>
+            <IonCol>
+              <AudioCard></AudioCard>
+            </IonCol>
+            <IonCol>
+              <AudioCard></AudioCard>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );

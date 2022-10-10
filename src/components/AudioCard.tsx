@@ -13,6 +13,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import React from "react";
 
 const AudioCard: React.FC = () => {
+  const audiobook = {
+    title: "This Is Islam",
+    src: "../images/this-is-islam",
+    audio: "../audio/Test_Opener.mp3",
+    narrator: "Mahmoud Othman",
+    author: "Abu Iyaad Amjad bin Muhammad Rafiq",
+  };
   const [isPlaying, setIsPlaying] = useState(false);
   const sound = useMemo(
     () =>
@@ -55,14 +62,15 @@ const AudioCard: React.FC = () => {
       <IonCard>
         <IonItem>
           <img
+          className="sqr-img"
             src={require("../images/this-is-islam.jpg")}
             alt="this is islam"
           />
           <IonCardHeader>
             <IonCardSubtitle>
-              Abu Iyaad Amjad bin Muhammad Rafiq
+              {audiobook.author}
             </IonCardSubtitle>
-            <IonCardTitle>This Is Islam</IonCardTitle>
+            <IonCardTitle>{audiobook.title}</IonCardTitle>
           </IonCardHeader>
 
           {!isPlaying && (

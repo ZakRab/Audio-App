@@ -15,10 +15,9 @@ import '../index.css';
 const BookCard: React.FC = () => {
   return (
     <>
-      <IonCard>
+      <IonCard >
         <IonCardHeader>
-        
-        <img src={require("../images/this-is-islam.jpg")} alt="this is islam" />
+        <img className="library-img center" src={require("../images/this-is-islam.jpg")} alt="this is islam" />
         </IonCardHeader>
         <IonCardHeader>
           <IonCardSubtitle>Abu Iyaad Amjad bin Muhammad Rafiq</IonCardSubtitle>
@@ -30,7 +29,7 @@ const BookCard: React.FC = () => {
           the status of women in Islam.
         </IonCardContent>
         <IonCardContent>
-          <IonButton shape="round" fill="outline">  <IonIcon slot="end" icon={bookmarkOutline}></IonIcon>Borrow Book</IonButton>
+          <IonButton shape="round" className="center" fill="outline">  <IonIcon slot="end" icon={bookmarkOutline}></IonIcon>Add To My Books</IonButton>
         </IonCardContent>
       </IonCard>
     </>

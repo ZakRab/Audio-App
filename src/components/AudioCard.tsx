@@ -7,6 +7,7 @@ import {
   IonCardTitle,
   IonItem,
   IonIcon,
+  IonProgressBar,
 } from "@ionic/react";
 import "./css/AudioCard.css";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -20,7 +21,8 @@ const AudioCard: React.FC = () => {
     narrator: "Mahmoud Othman",
     author: "Abu Iyaad Amjad bin Muhammad Rafiq",
   };
-  const [isPlaying, setIsPlaying] = useState(false);
+   const [progress, setProgress] = useState(0);
+   const [isPlaying, setIsPlaying] = useState(false);
   const sound = useMemo(
     () =>
       new Howl({
@@ -33,6 +35,16 @@ const AudioCard: React.FC = () => {
   const [soundId, setSoundId] = useState<number | undefined>(); // sound.play returns an id and begins to play the sound
 
   // listeners for testing
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress((sound.seek(soundId)/sound.duration()));
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, [sound.duration(soundId)]);
+
+
   useEffect(() => {
     sound.on(
       "play",
@@ -80,6 +92,10 @@ const AudioCard: React.FC = () => {
               if (isPlaying) return;
               setSoundId(sound.play(soundId));
               setIsPlaying(true);
+ 
+  console.log(sound.duration(soundId));
+  console.log(sound.seek(soundId));
+              
             }}
           />
           )} 
@@ -94,6 +110,7 @@ const AudioCard: React.FC = () => {
           />
 )} 
         </IonItem>
+<IonProgressBar value={progress}></IonProgressBar>
       </IonCard>
     </>
   );

@@ -1,0 +1,27 @@
+.sizing{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+.flex{
+    display: flex;
+}
+.sqr-img{
+    height: 75px;
+    width: 75px;
+    object-fit:cover;
+    border-radius: 5px;
+}
+.library-img{
+    height: 300px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.center{
+    display: block;
+    margin: auto;
+}
+.opacity{
+    
+}

@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonImg, IonItem, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './css/Signin.css';
 
@@ -7,16 +7,13 @@ const Signin: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Signin</IonTitle>
+          <IonTitle className='center'>Signin</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">signin</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Signin" />
+        <IonButton shape="round" className="center" fill="outline"> Sign In </IonButton>
+        <IonImg src={require("../images/islamic-geometric-pattern.jpeg")} ></IonImg>
+        <IonButton shape="round" className="center" fill="outline">Create Account </IonButton>
       </IonContent>
     </IonPage>
   );

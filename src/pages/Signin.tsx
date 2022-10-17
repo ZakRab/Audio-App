@@ -1,5 +1,4 @@
 import { IonButton, IonContent, IonHeader, IonImg, IonItem, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
 import './css/Signin.css';
 
 const Signin: React.FC = () => {

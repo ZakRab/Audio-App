@@ -13,7 +13,7 @@ const Library: React.FC = () => {
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Library</IonTitle>
+            <IonTitle size="large">Librar y</IonTitle>
           </IonToolbar>
         </IonHeader>
         <ExploreContainer name="Library page" />

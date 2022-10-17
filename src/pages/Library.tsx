@@ -8,7 +8,6 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import "./css/Library.css";
 import BookCard from "../components/BookCard";
 const Library: React.FC = () => {
   return (

@@ -1,5 +1,4 @@
 import { Redirect, Route } from 'react-router-dom';
-import { useContext } from 'react';
 import {
   IonApp,
   IonIcon,
@@ -16,10 +15,9 @@ import Library from './pages/Library';
 import MyBooks from './pages/MyBooks';
 import Search from './pages/Search';
 import Signin from './pages/Signin'
-import {UserContext} from './context/UserContext'
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
-
+import React, {useState} from 'react'
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
 import '@ionic/react/css/structure.css';
@@ -38,7 +36,8 @@ import './theme/variables.css';
 setupIonicReact();
 
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+return (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
@@ -76,6 +75,6 @@ const App: React.FC = () => (
       </IonTabs>
     </IonReactRouter>
   </IonApp>
-);
+)};
 
 export default App;

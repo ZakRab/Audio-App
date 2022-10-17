@@ -10,9 +10,6 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import AudioCard from "../components/AudioCard";
-
-import "./css/MyBooks.css";
-
 const MyBooks: React.FC = () => {
   return (
     <IonPage>

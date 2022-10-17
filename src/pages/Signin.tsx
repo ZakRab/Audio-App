@@ -1,5 +1,4 @@
 import { IonButton, IonContent, IonHeader, IonImg, IonItem, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import './css/Signin.css';
 
 const Signin: React.FC = () => {
   return (

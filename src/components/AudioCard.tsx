@@ -9,7 +9,6 @@ import {
   IonIcon,
   IonProgressBar,
 } from "@ionic/react";
-import "./css/AudioCard.css";
 import { useEffect, useMemo, useRef, useState } from "react";
 import React from "react";
 

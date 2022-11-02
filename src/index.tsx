@@ -4,14 +4,14 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import React from 'react';
-
+import {AppProvider} from './context/AppContext'
 const container = document.getElementById('root');
 const root = createRoot(container!);
 
 root.render(
-  <React.StrictMode>
+  <AppProvider>
     <App />
-    </React.StrictMode>
+    </AppProvider>
 );
 
 // If you want your app to work offline and load faster, you can change

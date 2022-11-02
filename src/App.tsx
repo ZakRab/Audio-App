@@ -17,7 +17,7 @@ import Search from './pages/Search';
 import Signin from './pages/Signin'
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
 import '@ionic/react/css/structure.css';
@@ -33,13 +33,17 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import {AppContext} from './context/AppContext'
+
 setupIonicReact();
 
 
 const App: React.FC = () => {
+const {user} = useContext<any>(AppContext)
+
 return (
   <IonApp>
-    <IonReactRouter>
+    <IonReactRouter >
       <IonTabs>
         <IonRouterOutlet>
          <Route exact path="/signin">
@@ -58,7 +62,7 @@ return (
             <Redirect to="/signin" />
           </Route>
         </IonRouterOutlet>
-        <IonTabBar slot="top">
+      {user ? <IonTabBar slot="top">
           <IonTabButton tab="library" href="/library">
             <IonIcon icon={libraryOutline} />
             <IonLabel>Library</IonLabel>
@@ -71,7 +75,7 @@ return (
             <IonIcon icon={searchOutline} />
             <IonLabel>Search</IonLabel>
           </IonTabButton>
-        </IonTabBar>
+        </IonTabBar> : <IonTabBar></IonTabBar>}
       </IonTabs>
     </IonReactRouter>
   </IonApp>

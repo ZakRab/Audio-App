@@ -1,8 +1,12 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './css/Signin.css';
+import { IonButton, IonContent, IonHeader, IonImg, IonItem, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { useContext } from 'react';
+import {AppContext} from '../context/AppContext'
 
 const Signin: React.FC = () => {
+ 
+const { setUser} = useContext<any>(AppContext)
+
+
   return (
     <IonPage>
       <IonHeader>
@@ -11,12 +15,9 @@ const Signin: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">signin</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Signin" />
+        <IonButton shape="round" className="center" fill="outline" onClick={()=>{setUser("mahmoud")}}> Sign In </IonButton>
+        <IonImg src={require("../images/islamic-geometric-pattern.jpeg")} ></IonImg>
+        <IonButton shape="round" className="center" fill="outline">Create Account </IonButton>
       </IonContent>
     </IonPage>
   );

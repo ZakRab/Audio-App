@@ -1,5 +1,4 @@
 import { Redirect, Route } from 'react-router-dom';
-import { useContext } from 'react';
 import {
   IonApp,
   IonIcon,
@@ -16,10 +15,9 @@ import Library from './pages/Library';
 import MyBooks from './pages/MyBooks';
 import Search from './pages/Search';
 import Signin from './pages/Signin'
-import {UserContext} from './context/UserContext'
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
-
+import React, {useContext, useState} from 'react'
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
 import '@ionic/react/css/structure.css';
@@ -35,12 +33,17 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import {AppContext} from './context/AppContext'
+
 setupIonicReact();
 
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+const {user} = useContext<any>(AppContext)
+
+return (
   <IonApp>
-    <IonReactRouter>
+    <IonReactRouter >
       <IonTabs>
         <IonRouterOutlet>
          <Route exact path="/signin">
@@ -59,7 +62,7 @@ const App: React.FC = () => (
             <Redirect to="/signin" />
           </Route>
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
+      {user ? <IonTabBar slot="top">
           <IonTabButton tab="library" href="/library">
             <IonIcon icon={libraryOutline} />
             <IonLabel>Library</IonLabel>
@@ -72,10 +75,10 @@ const App: React.FC = () => (
             <IonIcon icon={searchOutline} />
             <IonLabel>Search</IonLabel>
           </IonTabButton>
-        </IonTabBar>
+        </IonTabBar> : <IonTabBar></IonTabBar>}
       </IonTabs>
     </IonReactRouter>
   </IonApp>
-);
+)};
 
 export default App;

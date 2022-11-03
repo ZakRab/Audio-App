@@ -1,15 +1,17 @@
-import UserProvider from './context/UserContext'
+// import UserProvider from './context/UserContext'
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-
+import React from 'react';
+import {AppProvider} from './context/AppContext'
 const container = document.getElementById('root');
 const root = createRoot(container!);
+
 root.render(
-  <UserProvider>
+  <AppProvider>
     <App />
-    </UserProvider>
+    </AppProvider>
 );
 
 // If you want your app to work offline and load faster, you can change

@@ -1,6 +1,4 @@
 import { IonContent, IonHeader, IonPage, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './css/Search.css';
 
 const Search: React.FC = () => {
   return (
@@ -17,7 +15,6 @@ const Search: React.FC = () => {
             <IonTitle size="large">Search</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Search Page" />
       </IonContent>
     </IonPage>
   );
